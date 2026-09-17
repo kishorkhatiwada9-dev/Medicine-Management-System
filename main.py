@@ -1,5 +1,5 @@
 
-from inventorySystem import(show_medicine,
+from inventory import(show_medicine,
                             default_medicine,
                             main_menu)
 
