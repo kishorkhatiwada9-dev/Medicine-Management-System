@@ -25,6 +25,10 @@ while exit == False:
 
     elif input_1 == 2:
         meds = sell_medicine(default_medicine)
+
+    else:
+        print("Thank You")
+        exit = True
         
         
         
