@@ -23,10 +23,9 @@ def main_menu():
 def sell_medicine(data):
 
     exit_med = True
-
-    while exit_med == True:
     
-        customer_name = input("Enter the name of customer: ").strip()
+    customer_name = input("Enter the name of customer: ").strip()
+    while exit_med == True:
         med_name = input("Enter medicine name or ('done' to exit): ").strip()
 
         med_1 = data[0].split(",")
