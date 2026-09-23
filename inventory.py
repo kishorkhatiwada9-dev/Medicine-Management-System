@@ -59,6 +59,9 @@ def sell_medicine(data):
                     
                     elif input_yes_or_no.lower() == "no":
                         exit_med = False
+
+                    else: 
+                        print("Please enter valid input!")
                     
                 elif qty_tablet <= 0:
                     print("Enter positive value!")
