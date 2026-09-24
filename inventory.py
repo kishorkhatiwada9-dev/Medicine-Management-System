@@ -61,7 +61,7 @@ def sell_medicine(data):
                         exit_med = False
 
                     else: 
-                        print("Please enter valid input!")
+                        print("Please enter a valid input!")
                     
                 elif qty_tablet <= 0:
                     print("Enter positive value!")
