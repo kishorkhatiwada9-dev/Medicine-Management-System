@@ -52,16 +52,7 @@ def sell_medicine(data):
                     med_1[2] = str(qty_paracetamol)
                     data[0] = ", ".join(med_1)
 
-                    input_yes_or_no = input("Do you want to add more meds: 'yes' or 'no' ")
-
-                    if input_yes_or_no.lower() == "yes":
-                        continue
-                    
-                    elif input_yes_or_no.lower() == "no":
-                        exit_med = False
-
-                    else: 
-                        print("Please enter valid input!")
+                    ask_yes_no()
                     
                 elif qty_tablet <= 0:
                     print("Enter positive value!")
@@ -82,9 +73,34 @@ def sell_medicine(data):
                     med_1[2] = str(qty_paracetamol)
                     data[0] = ", ".join(med_1)
 
+                    ask_yes_no()
+
+                elif qty_strip <= 0:
+                    print("Enter positive value!")
+                
+                elif qty_strip > int(med_1[2].strip())/10:
+                    print(int(med_1[2])/10,"number of strip is only available.")
+                
+                else:
+                    print("Please enter valid number.")
+
+
 
 
             return data
+
+def ask_yes_no():
+    while True:
+        input_yes_or_no = input("Do you want to add more meds: 'yes' or 'no' ")
+
+        if input_yes_or_no.lower() == "yes":
+            return True
+        
+        elif input_yes_or_no.lower() == "no":
+            return False
+
+        else: 
+            print("Please enter valid input!")
 
         
 
