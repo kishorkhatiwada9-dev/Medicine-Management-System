@@ -2,7 +2,8 @@
 from inventory import(show_medicine,
                             default_medicine,
                             main_menu,
-                            sell_medicine)
+                            sell_medicine,
+                            price)
 
 
 
@@ -24,7 +25,10 @@ while exit == False:
         
 
     elif input_1 == 2:
-        meds = sell_medicine(default_medicine)
+        meds = sell_medicine(default_medicine, price)
+        print(price)
+            
+
 
     else:
         print("Thank You")

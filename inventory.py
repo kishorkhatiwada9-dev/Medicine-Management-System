@@ -18,9 +18,9 @@ def main_menu():
     print(f"{'3. Restock Medicine'}")
     print(f"{'4. Save & Exit'}")
 
+price = []
 
-
-def sell_medicine(data):
+def sell_medicine(data, money):
 
     exit_med = True
     
@@ -46,19 +46,29 @@ def sell_medicine(data):
 
             if tab_or_strip.lower() == "tablet":
                 qty_tablet = int(input("Enter the quantyty: "))
-                if qty_tablet >0 and qty_tablet <= int(med_1[2].strip()):
+                if qty_tablet >0 and qty_tablet <= int(qty_paracetamol):
                     qty_paracetamol-=qty_tablet
 
                     med_1[2] = str(qty_paracetamol)
                     data[0] = ", ".join(med_1)
 
-                    ask_yes_no()
+                    amt = qty_tablet * 5
+                    money.append(amt)
+                    total = 0
+                    i = 0
+            
+                    while i<len(money):
+                        total+=money[i]
+                        i+=1
+                    exit_med = ask_yes_no()
+
+
                     
                 elif qty_tablet <= 0:
                     print("Enter positive value!")
 
-                elif qty_tablet > int(med_1[2].strip()):
-                    print(int(med_1[2]),"medicine is only available.")
+                elif qty_tablet > int(qty_paracetamol):
+                    print(int(qty_paracetamol),"medicine is only available.")
 
                 else:
                     print("Please enter valid number.")
@@ -67,27 +77,26 @@ def sell_medicine(data):
             elif tab_or_strip.lower() == "strip":
                 qty_strip = int(input("Enter the number of strip: "))
 
-                if qty_strip > 0 and qty_strip <= (int(med_1[2].strip()))/10:
+                if qty_strip > 0 and qty_strip <= int(qty_paracetamol)/10:
                     qty_paracetamol-= qty_strip * 10
 
                     med_1[2] = str(qty_paracetamol)
                     data[0] = ", ".join(med_1)
 
-                    ask_yes_no()
+                    exit_med = ask_yes_no()
 
                 elif qty_strip <= 0:
                     print("Enter positive value!")
                 
-                elif qty_strip > int(med_1[2].strip())/10:
-                    print(int(med_1[2])/10,"number of strip is only available.")
+                elif qty_strip > int(qty_paracetamol)/10:
+                    print(int(qty_paracetamol)/10,"number of strip is only available.")
                 
                 else:
                     print("Please enter valid number.")
 
 
 
-
-            return data
+            return data, money
 
 def ask_yes_no():
     while True:
@@ -101,6 +110,10 @@ def ask_yes_no():
 
         else: 
             print("Please enter valid input!")
+
+
+
+
 
         
 
