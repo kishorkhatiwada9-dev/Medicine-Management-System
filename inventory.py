@@ -86,15 +86,13 @@ def sell_medicine(data, money):
                     exit_med = ask_yes_no()
 
                 elif qty_strip <= 0:
-                    print("Enter positive value!")
+                    print("Enter a positive value!")
                 
                 elif qty_strip > int(qty_paracetamol)/10:
                     print(int(qty_paracetamol)/10,"number of strip is only available.")
                 
                 else:
-                    print("Please enter valid number.")
-
-
+                    print("Please enter a valid number.")
 
             return data, money
 
