@@ -65,7 +65,7 @@ def sell_medicine(data, money):
 
                     
                 elif qty_tablet <= 0:
-                    print("Enter positive value!")
+                    print("Enter a positive value!")
 
                 elif qty_tablet > int(qty_paracetamol):
                     print(int(qty_paracetamol),"medicine is only available.")
@@ -92,7 +92,7 @@ def sell_medicine(data, money):
                     print(int(qty_paracetamol)/10,"number of strip is only available.")
                 
                 else:
-                    print("Please enter a valid number.")
+                    print("Enter valid number.")
 
             return data, money
 
