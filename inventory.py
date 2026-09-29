@@ -71,7 +71,7 @@ def sell_medicine(data, money):
                     print(int(qty_paracetamol),"medicine is only available.")
 
                 else:
-                    print("Please enter valid number.")
+                    print("Enter valid number.")
             
 
             elif tab_or_strip.lower() == "strip":
@@ -92,7 +92,7 @@ def sell_medicine(data, money):
                     print(int(qty_paracetamol)/10,"number of strip is only available.")
                 
                 else:
-                    print("Enter valid number.")
+                    print("Enter a valid number.")
 
             return data, money
 
