@@ -45,7 +45,7 @@ def sell_medicine(data, money):
             tab_or_strip = input("You want to buy a 'tablet' or 'strip': ").strip()
 
             if tab_or_strip.lower() == "tablet":
-                qty_tablet = int(input("Enter the quantyty: "))
+                qty_tablet = int(input("Enter the quantity: "))
                 if qty_tablet >0 and qty_tablet <= int(qty_paracetamol):
                     qty_paracetamol-=qty_tablet
 
@@ -75,7 +75,7 @@ def sell_medicine(data, money):
             
 
             elif tab_or_strip.lower() == "strip":
-                qty_strip = int(input("Enter the number of strip: "))
+                qty_strip = int(input("Enter number of strip: "))
 
                 if qty_strip > 0 and qty_strip <= int(qty_paracetamol)/10:
                     qty_paracetamol-= qty_strip * 10
@@ -92,7 +92,7 @@ def sell_medicine(data, money):
                     print(int(qty_paracetamol)/10,"number of strip is only available.")
                 
                 else:
-                    print("Enter a valid number.")
+                    print("Enter valid number.")
 
             return data, money
 
