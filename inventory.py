@@ -60,6 +60,7 @@ def sell_medicine(data, money):
                     while i<len(money):
                         total+=money[i]
                         i+=1
+                    # print("Total MOney :",total)
                     exit_med = ask_yes_no()
 
 
@@ -86,15 +87,15 @@ def sell_medicine(data, money):
                     exit_med = ask_yes_no()
 
                 elif qty_strip <= 0:
-                    print("Enter a positive value!")
+                    print("Enter positive value!")
                 
                 elif qty_strip > int(qty_paracetamol)/10:
                     print(int(qty_paracetamol)/10,"number of strip is only available.")
                 
                 else:
-                    print("Enter avalid number.")
+                    print("Enter valid number.")
 
-            return data, money
+            return data, total
 
 def ask_yes_no():
     while True:
@@ -107,7 +108,7 @@ def ask_yes_no():
             return False
 
         else: 
-            print("Enter valid input!")
+            print("Enter a valid input!")
 
 
 
